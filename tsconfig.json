@@ -10,12 +10,12 @@
      // 新增
      "jsx": "react", 
      "module": "ESNext",  
-     "declaration": true,
-     "declarationDir": "types",
+    //  "declaration": true,
+    //  "declarationDir": "dist",
      "sourceMap": true,
      // "outDir": "dist",
      "moduleResolution": "node",
      "allowSyntheticDefaultImports": true,
-     "emitDeclarationOnly": true,
+    //  "emitDeclarationOnly": true,
   }
 }
