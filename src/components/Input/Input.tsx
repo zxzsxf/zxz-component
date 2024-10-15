@@ -5,5 +5,7 @@ export interface InputProps {
 }
 
 export const Input = (props: InputProps) => {
-  return <input></input>;
+  return (<div>
+    {props?.label}: <input></input>
+  </div>);
 };
