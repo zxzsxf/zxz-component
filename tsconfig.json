@@ -1,19 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES5", // 修改
-    "esModuleInterop": true, 
-    "forceConsistentCasingInFileNames": true,
-    "strict": true, 
-    "skipLibCheck": true,
+     // 默认
+     "target": "ES5", // 修改
+     "esModuleInterop": true, 
+     "forceConsistentCasingInFileNames": true,
+     "strict": true, 
+     "skipLibCheck": true,
     
-    "jsx": "react", 
-    "module": "ESNext",  
-    "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true,
+     // 新增
+     "jsx": "react", 
+     "module": "ESNext",  
+     "declaration": true,
+     "declarationDir": "types",
+     "sourceMap": true,
+     // "outDir": "dist",
+     "moduleResolution": "node",
+     "allowSyntheticDefaultImports": true,
+     "emitDeclarationOnly": true,
   }
 }
