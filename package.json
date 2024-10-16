@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "template for react component",
   "main": "./dist/cjs/index.js",
+  "mainDir": "./dist/cjs",
   "module": "./dist/esm/index.js",
+  "moduleDir": "./dist/esm",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
