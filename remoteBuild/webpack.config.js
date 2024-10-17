@@ -1,10 +1,10 @@
 const merge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const cssnano = require('cssnano');
 const presetEnv = require('postcss-preset-env');
 const baseConfig = require('./webpack.config.base');
 
-const { componentName } = process.env;
+const { componentName = 'button' } = process.env;
 
 const postcssPlugins = [
     presetEnv({
@@ -21,9 +21,6 @@ module.exports = merge(baseConfig({
     output: {
         filename: `${componentName}/${componentName}.remote-component.[contenthash].js`,
     },
-    plugins: [
-        new CleanWebpackPlugin(),
-    ],
     module: {
         rules: [
             {

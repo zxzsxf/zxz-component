@@ -1,6 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const { componentName } = process.env;
+const { componentName = 'button' } = process.env;
 
 module.exports = function (options) {
     console.log(options, '=======options=======');
@@ -8,12 +8,10 @@ module.exports = function (options) {
         isDebug = false,
     } = options;
     return {
-        entry: `../packages/${componentName}`,
+        entry: `../../packages/${componentName}/index.ts`,
         output: {
             filename: '[name].js',
             path: path.resolve(process.cwd(), 'build'),
-            library: `${componentName.replace(/-/g, '_')}`,
-            libraryTarget: 'jsonp',
         },
         stats: {
             children: false,

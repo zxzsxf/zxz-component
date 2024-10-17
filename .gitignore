@@ -2,3 +2,4 @@
 *storybook.log
 /dist
 /storybook-static
+/packages/*/node_modules

@@ -6,6 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 console.log(baseConfig, '=======baseConfig=======');
 const serverPort = '9999';
+const { componentName = 'button' } = process.env;
 
 module.exports = merge(baseConfig({
     isDebug: true,
