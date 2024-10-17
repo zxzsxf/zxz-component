@@ -3,8 +3,8 @@
     "version": "0.0.1",
     "description": "",
     "scripts": {
-      "dev": "componentsName=button webpack-dev-server --config ../../remoteBuild/webpack.config.dev.js --progress",
-      "build": "componentsName=button bash ../../remoteBuild/build.sh"
+      "dev": "componentName=button webpack-dev-server --config ../../remoteBuild/webpack.config.dev.js --progress",
+      "build": "componentName=button bash ../../remoteBuild/build.sh"
     },
     "repository": {
       "type": "git",
