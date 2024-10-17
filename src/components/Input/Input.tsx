@@ -10,3 +10,5 @@ export const Input = (props: InputProps) => {
     {props?.label}: <input></input>
   </div>);
 };
+
+export default Input;

@@ -1,0 +1,25 @@
+{
+    "name": "@zxz-ui/button",
+    "version": "0.0.1",
+    "description": "",
+    "scripts": {
+      "dev": "componentsName=button webpack-dev-server --config ../../remoteBuild/webpack.config.dev.js --progress",
+      "build": "componentsName=button bash ../../remoteBuild/build.sh"
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "author": "zxz",
+    "license": "ISC",
+    "devDependencies": {
+      "webpack": "^4.31.0",
+      "webpack-cli": "^3.3.2",
+      "webpack-merge": "^4.2.1"
+    },
+    "peerDependencies": {
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1"
+    }
+  }
+  
