@@ -10,7 +10,7 @@ export default {
 	},
 } as any;
 
-const Template: any = (args) => <Input {...args} />;
+const Template: any = (args: any) => <Input {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

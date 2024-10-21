@@ -16,6 +16,8 @@
      "outDir": "./dist/esm",
      "moduleResolution": "node",
      "allowSyntheticDefaultImports": true,
-     "emitDeclarationOnly": true,
+     "emitDeclarationOnly": false,
+     "noEmit": false,
+     
   }
 }

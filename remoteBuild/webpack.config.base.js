@@ -8,20 +8,19 @@ module.exports = function (options) {
         isDebug = false,
     } = options;
     return {
-        entry: `../../packages/${componentName}/index.ts`,
+        entry: `../../packages/${componentName}/index.js`,
         output: {
             filename: '[name].js',
-            path: path.resolve(process.cwd(), 'build'),
+            path: path.resolve(process.cwd(), 'dist'),
         },
         stats: {
             children: false,
         },
         resolve: {
             alias: {
-                common: path.resolve(process.cwd(), 'src/common'),
                 '@': path.resolve(process.cwd(), 'src'),
             },
-            extensions: ['.js', '.json', '.jsx', '.ts', '.tsx', 'index.js', 'index.ts', 'index.tsx', 'index.jsx'],
+            extensions: ['.ts', '.tsx', 'index.ts', 'index.tsx','.js', '.json', '.jsx', 'index.js', 'index.jsx'],
         },
         externals: {
             react: 'React',
@@ -51,6 +50,11 @@ module.exports = function (options) {
                         },
                         {
                             loader: 'ts-loader',
+                            options: {
+                                compilerOptions: {
+                                  noEmit: false,
+                                },
+                              },
                         },
                     ],
                 },
