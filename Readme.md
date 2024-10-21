@@ -1,6 +1,10 @@
 zxz-component
 
+主包node
 node v18.17.1
+
+远程组件构建
+node 14.17
 
 npx storybook init --builder vite
 
