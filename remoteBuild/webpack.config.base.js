@@ -22,11 +22,11 @@ module.exports = function (options) {
             },
             extensions: ['.ts', '.tsx', 'index.ts', 'index.tsx','.js', '.json', '.jsx', 'index.js', 'index.jsx'],
         },
-        externals: {
-            react: 'React',
-            'react-dom': 'ReactDOM',
-            'react-router-dom': 'ReactRouterDOM',
-        },
+        // externals: {
+        //     react: 'React',
+        //     'react-dom': 'ReactDOM',
+        //     'react-router-dom': 'ReactRouterDOM',
+        // },
         plugins: [
             new VueLoaderPlugin(),
         ],

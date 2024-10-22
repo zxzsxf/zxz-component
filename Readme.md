@@ -1,10 +1,12 @@
 zxz-component
 
 主包node
-node v18.17.1
+node v18.17.1 npm run build
 
 远程组件构建
-node 14.17
+node 14.17 npm run build
+启动远程组件本地调试
+node 14.17 npm run dev
 
 npx storybook init --builder vite
 

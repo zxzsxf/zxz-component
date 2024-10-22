@@ -3,3 +3,4 @@
 /dist
 /storybook-static
 /packages/*/node_modules
+/packages/*/dist
