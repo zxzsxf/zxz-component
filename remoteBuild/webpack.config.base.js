@@ -1,5 +1,6 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { library } = require('webpack');
 const { componentName = 'button' } = process.env;
 
 module.exports = function (options) {
@@ -12,6 +13,8 @@ module.exports = function (options) {
         output: {
             filename: '[name].js',
             path: path.resolve(process.cwd(), 'dist'),
+            library: 'remote_component_hook',
+            libraryTarget: 'jsonp'
         },
         stats: {
             children: false,
