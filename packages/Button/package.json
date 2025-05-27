@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "dev": "webpack-dev-server --config ../../remoteBuild/webpack.config.dev.js --progress",
+    "dev": "webpack-dev-server --config ../../remoteBuild/webpack.config.dev.cjs --progress",
     "build": "bash ../../remoteBuild/build.sh componentName=button "
   },
   "repository": {

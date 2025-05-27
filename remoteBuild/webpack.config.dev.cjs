@@ -3,7 +3,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const baseConfig = require('./webpack.config.base');
+const baseConfig = require('./webpack.config.base.cjs');
 console.log(baseConfig, '=======baseConfig=======');
 const serverPort = '9999';
 const { componentName = 'button' } = process.env;
