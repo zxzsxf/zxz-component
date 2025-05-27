@@ -1,4 +1,3 @@
-
 import { readFileSync } from 'node:fs';
 
 import resolve from "@rollup/plugin-node-resolve";
@@ -13,19 +12,19 @@ export default [
   {
     input: "./src/index.ts",
     output: {
-      file:  pkg.module,
+      file: pkg.module,
       format: "esm",
       sourcemap: true,
     },
     plugins: [
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json"}),
+      typescript({ tsconfig: "./tsconfig.json" }),
       postcss(),
     ],
   },
   {
-    input: "./dist/esm/index.d.ts",
+    input: "./src/index.ts",
     output: [{ file: "./dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],
