@@ -17,8 +17,20 @@ async function uploadComponent(componentName, filePath) {
       throw new Error(`文件不存在：${filePath}`);
     }
 
+    // 读取 package.json 获取版本信息
+    const packageJsonPath = path.join(__dirname, '..', 'packages', componentName, 'package.json');
+    if (!fs.existsSync(packageJsonPath)) {
+      throw new Error(`找不到 package.json：${packageJsonPath}`);
+    }
+
+    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf-8'));
+    const version = packageJson.version;
+    const timestamp = Date.now();
+
     const formData = new FormData();
     formData.append('componentName', componentName);
+    formData.append('version', version);
+    formData.append('timestamp', timestamp);
     formData.append('file', fs.createReadStream(filePath));
 
     const response = await fetch('http://localhost:4000/upload', {
