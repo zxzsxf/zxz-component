@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from './Input';
 
 export default {
-	title: '通用/Input',
+	title: 'Components/Input',
 	component: Input,
 	// More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 	argTypes: {

@@ -1,6 +1,6 @@
 {
   "name": "@zxz-ui/button",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.1",
   "description": "",
   "scripts": {
     "dev": "webpack-dev-server --config ../../remoteBuild/webpack.config.dev.cjs --progress",

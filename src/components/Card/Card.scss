@@ -1,0 +1,32 @@
+.zxz-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  margin: 8px;
+  
+  .zxz-card-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .zxz-card-content {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  @media screen and (max-width: 768px) {
+    margin: 8px 0;
+    border-radius: 4px;
+    
+    .zxz-card-title {
+      font-size: 14px;
+    }
+    
+    .zxz-card-content {
+      font-size: 12px;
+    }
+  }
+} 
