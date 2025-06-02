@@ -49,6 +49,7 @@ EOF
 echo "构建信息已生成"
 
 # 远程组件构建
+export componentName="$componentName"
 npx webpack --config '../../remoteBuild/webpack.config.cjs' --progress
 
 # 远程组件资源上传

@@ -4,7 +4,7 @@ const cssnano = require('cssnano');
 const presetEnv = require('postcss-preset-env');
 const baseConfig = require('./webpack.config.base.cjs');
 
-const { componentName = 'button' } = process.env;
+const { componentName = 'componentName-undefined' } = process.env;
 
 const postcssPlugins = [
     presetEnv({
