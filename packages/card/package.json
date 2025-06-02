@@ -1,29 +1,27 @@
 {
-    "name": "@zxz-ui/card",
-    "version": "0.0.1",
-    "description": "",
-    "scripts": {
-      "dev": "webpack-dev-server --config ../../remoteBuild/webpack.config.dev.cjs --progress",
-      "build": "bash ../../remoteBuild/build.sh componentName=card "
-    },
-    "repository": {
-      "type": "git",
-      "url": ""
-    },
-    "author": "zxz",
-    "license": "ISC",
-    "devDependencies": {
-      "webpack": "^4.42.0",
-      "webpack-cli": "^3.3.11",
-      "webpack-dev-server": "3.10.3",
-      "webpack-manifest-plugin": "^2.2.0",
-      "webpack-merge": "^4.2.1"
-    },
-    "peerDependencies": {
-      "react": "^16.13.1",
-      "react-dom": "^16.13.1"
-    },
-    "dependencies": {
-    }
-  }
-  
+  "name": "@zxz-ui/card",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "webpack-dev-server --config ../../remoteBuild/webpack.config.dev.cjs --progress",
+    "build": "bash ../../remoteBuild/build.sh componentName=card --buildInfo=\"$npm_config_buildInfo\""
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "zxz",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "3.10.3",
+    "webpack-manifest-plugin": "^2.2.0",
+    "webpack-merge": "^4.2.1"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {}
+}

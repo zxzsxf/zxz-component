@@ -1,13 +1,21 @@
 zxz-component
 
-主包node
+### 主包
+
+构建：
 node v18.17.1 npm run build
 
+storybook启动：
 node v18.17.1 npm run storybook
 
 
-远程组件构建
-node 14.17 npm run build
+### 远程组件
+
+构建
+node 14.17
+npm run build --buildInfo="填写发布信息"
+
+
 启动远程组件本地调试
 node 14.17 npm run dev
 

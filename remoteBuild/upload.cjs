@@ -10,7 +10,7 @@ import('node-fetch').then(module => {
   startUpload();
 });
 
-async function uploadComponent(componentName, filePath) {
+async function uploadComponent(componentName, buildInfo, filePath) {
   console.log(`正在上传组件 ${componentName}...`);
   try {
     if (!fs.existsSync(filePath)) {
@@ -27,10 +27,39 @@ async function uploadComponent(componentName, filePath) {
     const version = packageJson.version;
     const timestamp = Date.now();
 
+    // 获取git用户信息
+    const gitUserName = require('child_process')
+      .execSync('git config user.name')
+      .toString()
+      .trim();
+
+    // 读取构建信息文件
+    const buildInfoPath = path.join(__dirname, '..', 'packages', componentName, 'dist', 'build-info.json');
+    let buildInfoData = {};
+    if (fs.existsSync(buildInfoPath)) {
+      buildInfoData = JSON.parse(fs.readFileSync(buildInfoPath, 'utf-8'));
+    }
+
     const formData = new FormData();
     formData.append('componentName', componentName);
     formData.append('version', version);
     formData.append('timestamp', timestamp);
+    formData.append('publisher', gitUserName);
+    formData.append('description', packageJson.description || `Version ${version}`);
+    formData.append('buildInfo', buildInfo || '');
+    
+    // 添加组件元数据
+    const metadata = {
+      name: packageJson.name,
+      version: version,
+      dependencies: packageJson.dependencies || {},
+      peerDependencies: packageJson.peerDependencies || {},
+      author: packageJson.author,
+      license: packageJson.license,
+      repository: packageJson.repository,
+      buildDetails: buildInfoData
+    };
+    formData.append('metadata', JSON.stringify(metadata));
     formData.append('file', fs.createReadStream(filePath));
 
     const response = await fetch('http://localhost:4000/upload', {
@@ -53,6 +82,8 @@ async function uploadComponent(componentName, filePath) {
 
 // 获取命令行参数
 let componentName = process.argv[2];
+let buildInfo = process.argv[3] || '';
+
 if (!componentName) {
   console.error('请提供组件名参数');
   process.exit(1);
@@ -83,5 +114,5 @@ const distPath = path.join(distDir, jsFile);
 
 // 将上传逻辑移到函数中
 function startUpload() {
-  uploadComponent(componentName, distPath);
+  uploadComponent(componentName, buildInfo, distPath);
 } 
