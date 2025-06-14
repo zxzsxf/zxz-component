@@ -1,10 +1,10 @@
 {
   "name": "@zxz-ui/button",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "scripts": {
     "dev": "webpack-dev-server --config ../../remoteBuild/webpack.config.dev.cjs --progress",
-    "build": "bash ../../remoteBuild/build.sh componentName=button --buildInfo=\"$npm_config_buildInfo\""
+    "build": "node ../../remoteBuild/build.js componentName=button --buildInfo=\"$npm_config_buildInfo\""
   },
   "repository": {
     "type": "git",

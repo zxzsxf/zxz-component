@@ -62,7 +62,7 @@ async function uploadComponent(componentName, buildInfo, filePath) {
     formData.append('metadata', JSON.stringify(metadata));
     formData.append('file', fs.createReadStream(filePath));
 
-    const response = await fetch('http://localhost:4000/upload', {
+    const response = await fetch('http://localhost:1001/micro/components/file/upload', {
       method: 'POST',
       body: formData
     });
